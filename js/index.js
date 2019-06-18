@@ -1,11 +1,20 @@
 // Your code goes here
 let navChange = document.querySelector("header nav");
+let funBusTitle = document.querySelector("header h1");
 
 navChange.addEventListener('click', event => {
     event.preventDefault();
+    console.log(event.target.textContent)
+    funBusTitle.textContent = event.target.textContent;
 });
 
 
+funBusTitle.addEventListener('click', event => {
+    funBusTitle.textContent = "Fun Bus";
+})
+
+
+///////////header info
 let headerChange = document.querySelector("header");
 
 headerChange.addEventListener('mouseover', event => {
@@ -17,11 +26,11 @@ headerChange.addEventListener('mouseover', event => {
 headerChange.addEventListener('mouseleave', event => {
     headerChange.style.backgroundColor = "white";
     headerChange.style.color = "black";
-   
+    
 });
 
 
-
+///////////images header
 
 let funBusImage = document.querySelector(".intro img");
 
@@ -36,6 +45,8 @@ funBusImage.addEventListener('mouseleave', event => {
 
 });
 
+
+///////images main content
 let adventureImg = document.querySelector(".content-section img");
 
 adventureImg.addEventListener('drag', event => {
@@ -48,6 +59,22 @@ adventureImg.addEventListener('dragend', event => {
     event.preventDefault();
 });
 
+// let picturesShuffle = {
+//     "pictures": {
+//     "picture-1": "https://unsplash.com/photos/1-29wyvvLJA",
+//     "picture-2": "https://unsplash.com/photos/duQ1ulzTJbM"
+//     }
+// };
+
+
+// funImg.addEventListener('click', event => {
+//     funImg.forEach((funImg, index) => {
+//     funImg.src = picturesShuffle('pictures')(`picture-${index+1}`);
+//     });
+//     event.preventDefault();
+
+// })
+
 
 let funImg = document.querySelector(".inverse-content img");
 funImg.addEventListener('drag', event => {
@@ -58,24 +85,45 @@ funImg.addEventListener('dragend', event => {
     funImg.src = "img/fun.jpg"
 })
 
-let destinationImg = document.querySelector(".content-destination");
+///////////main content info
+
+let everything = document.addEventListener("copy", event => {
+    alert("Can not complete action")
+    event.preventDefault();
+});
+
+let headingTwo = document.querySelectorAll("h4");
+
+headingTwo.forEach((item) => {
+    item.addEventListener('dblclick', event => {
+        item.style.color = "red";
+    })
+    item.addEventListener('click', event => {
+        item.style.color = "black";
+    })
+});
+
+
+
+
+///////////destination
+let destination = document.querySelector(".content-destination");
 
 function zoom(event) {
     event.preventDefault();
   
     scale += event.deltaY * -0.01;
-  
-    // Restrict scale
-    scale = Math.min(Math.max(.05, scale), 1.3);
-  
-    // Apply scale transform
-    destinationImg.style.transform = `scale(${scale})`;
+    scale = 1.3;
+    destination.style.transform = `scale(${scale})`;
   }
   
   let scale = 1;
   
-  destinationImg.onwheel = zoom;
+  destination.onwheel = zoom;
 
-  destinationImg.addEventListener('click', event => {
-      destinationImg.preventDefault();
-  })
+  destination.addEventListener('click', event => {
+    destination.style.transform = "scale(1)";
+  });
+
+ 
+  
