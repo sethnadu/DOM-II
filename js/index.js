@@ -2,6 +2,8 @@
 let navChange = document.querySelector("header nav");
 let funBusTitle = document.querySelector("header h1");
 
+
+
 navChange.addEventListener('click', event => {
     event.preventDefault();
     console.log(event.target.textContent)
@@ -28,6 +30,10 @@ headerChange.addEventListener('mouseleave', event => {
     headerChange.style.color = "black";
     
 });
+
+
+let headerHeading = document.querySelector("header h2");
+
 
 
 ///////////images header
@@ -87,21 +93,11 @@ funImg.addEventListener('dragend', event => {
 
 ///////////main content info
 
-let everything = document.addEventListener("copy", event => {
+ document.addEventListener("copy", event => {
     alert("Can not complete action")
     event.preventDefault();
 });
 
-let headingTwo = document.querySelectorAll("h4");
-
-headingTwo.forEach((item) => {
-    item.addEventListener('dblclick', event => {
-        item.style.color = "red";
-    })
-    item.addEventListener('click', event => {
-        item.style.color = "black";
-    })
-});
 
 
 
@@ -111,19 +107,36 @@ let destination = document.querySelector(".content-destination");
 
 function zoom(event) {
     event.preventDefault();
-  
-    scale += event.deltaY * -0.01;
-    scale = 1.3;
-    destination.style.transform = `scale(${scale})`;
+    destination.style.transform = `scale(1.3)`;
   }
   
   let scale = 1;
-  
   destination.onwheel = zoom;
 
   destination.addEventListener('click', event => {
     destination.style.transform = "scale(1)";
   });
 
- 
+
+  let headingTwo = document.querySelectorAll("h4");
+
+  headingTwo.forEach((item) => {
+      item.addEventListener('dblclick', event => {
+          item.style.color = "red";
+      })
+      item.addEventListener('click', event => {
+          item.style.color = "black";
+      })
+  });
+  
+  let destinationParagraph = document.querySelectorAll(".content-pick p");
+
+  destinationParagraph.forEach((item) => {
+    item.addEventListener('contextmenu', event => {
+        item.style.color = "gold";
+    })
+    item.addEventListener('click', event => {
+        item.style.color = "black";
+    })
+});
   
