@@ -12,6 +12,7 @@ navChange.addEventListener('click', event => {
 
 
 funBusTitle.addEventListener('click', event => {
+    funBusTitle.style.color = "red";
     funBusTitle.textContent = "Fun Bus";
 })
 
@@ -32,7 +33,23 @@ headerChange.addEventListener('mouseleave', event => {
 });
 
 
-let headerHeading = document.querySelector("header h2");
+
+funBusTitle.addEventListener("mouseenter", event => {
+        funBusTitle.style.color = "white";
+    if (funBusTitle.style.color === "white") {
+        funBusTitle.style.color = "green";
+     };
+    });
+
+funBusTitle.addEventListener("mouseleave", event => {
+    if (funBusTitle.style.color === "green") {
+        funBusTitle.style.color = "gold";
+        };
+    });
+
+
+
+
 
 
 
@@ -65,6 +82,12 @@ adventureImg.addEventListener('dragend', event => {
     event.preventDefault();
 });
 
+adventureImg.addEventListener('click', event => {
+    adventureImg.src = Math.ceil(Math.random('img/maps/1.jpeg') * 4);
+
+
+});
+
 // let picturesShuffle = {
 //     "pictures": {
 //     "picture-1": "https://unsplash.com/photos/1-29wyvvLJA",
@@ -90,6 +113,8 @@ funImg.addEventListener('drag', event => {
 funImg.addEventListener('dragend', event => {
     funImg.src = "img/fun.jpg"
 })
+
+
 
 ///////////main content info
 
