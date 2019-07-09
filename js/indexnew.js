@@ -7,7 +7,11 @@ logo.addEventListener("dblclick", () => {
   logo.style.textShadow = "5px 10px 10px yellow";
 });
 
-logo.addEventListener("load" () =>)
+logo.addEventListener("click", () => {
+    TweenLite.to("img", 2.5, { ease: Bounce.easeIn, scaleY:1, });
+    });
+
+
 //Nav changes
 const navLinks = document.querySelectorAll(".nav-link");
 
@@ -66,13 +70,18 @@ introImg.addEventListener("dragend", () => {
 });
 
 //body change
-
+const html = document.querySelector("html");
 const body = document.querySelector("body");
 const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 const footerP = document.querySelector("footer p");
 const img = document.querySelectorAll("img");
 const h2 = document.querySelectorAll("h2");
+
+html.addEventListener("click", () => {
+    TweenLite.to("body", 2.5, { ease: Bounce.easeIn, scaleX:1, });
+    });
+    
 
 body.addEventListener("keypress", () => {
   header.style.backgroundColor = "black";

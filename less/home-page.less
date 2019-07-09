@@ -1,4 +1,10 @@
+body {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
 .home {
+ 
 
   .intro {
     padding: 90px 0 10px;
@@ -7,6 +13,9 @@
     img {
       max-width: 100%;
       height: auto;
+      transform: scaleY(0);
+     transform-origin: top;
+      
     }
 
     h2 {
@@ -43,7 +52,7 @@
 
       img {
         border-radius: 10px;
-
+        
         @media @mobile {
           width: 100%;
         }
@@ -84,6 +93,7 @@
 
     img {
       border-radius: 10px;
+      
     }
   }
 
